@@ -45,7 +45,16 @@ var allFrequencies = [
 
 function calculateFrequencyAndOutput(value)
 {
+    var outputFreq = allFrequencies[value];
 
+    if (outputFreq <= 127 && outputFreq >= 0 && outputFreq != "")
+    {
+        document.getElementById("midiTextOutput").innerHTML = "The calculated frequency is: " + outputFreq + "Hz.";
+    }
+    else
+    {
+        document.getElementById("midiTextOutput").innerHTML = "Please enter a number between 0 & 127!";
+    }
 }
 
 document.getElementById("convertButton").addEventListener("click",
